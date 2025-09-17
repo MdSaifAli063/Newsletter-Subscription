@@ -1,0 +1,68 @@
+# Node modules & logs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+.npm/
+
+# Environment files (keep examples)
+.env
+.env.*
+!.env.example
+server/.env
+server/.env.*
+!server/.env.example
+
+# Build outputs
+dist/
+build/
+out/
+server/public/dist/
+server/public/build/
+
+# Tool caches
+.cache/
+.parcel-cache/
+.vite/
+server/.vite/
+.turbo/
+turbo/
+
+# Framework outputs (if used later)
+.next/
+.nuxt/
+.svelte-kit/
+.astro/
+
+# Testing & coverage
+coverage/
+.nyc_output/
+
+# Linters/formatters caches
+.eslintcache
+.stylelintcache
+
+# TypeScript
+*.tsbuildinfo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors/IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Local certs/keys (dev only)
+*.pem
+*.p12
+*.key
+*.crt
+
+# Temp
+tmp/
+temp/

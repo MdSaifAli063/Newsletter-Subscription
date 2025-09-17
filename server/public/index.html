@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Subscribe</title>
+
+  <!-- Reset styles -->
+  <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
+
+  <!-- Google Fonts Muli -->
+  <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Script -->
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <section class="wrapper">
+    <div class="container">
+      <div class="img__container" aria-hidden="true">
+        <img
+          src="https://images.unsplash.com/photo-1546793665-c74683f339c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
+          alt=""
+          class="img"
+        />
+        <div class="img__overlay"></div>
+      </div>
+
+      <div class="content">
+        <div class="badge">Fresh & Tasty</div>
+        <h2 class="subtitle">Subscribe today</h2>
+        <h1 class="title">Never miss a recipe</h1>
+
+        <ul class="features" aria-label="What you get">
+          <li>
+            <span class="icon" aria-hidden="true">🍽️</span>
+            Weekly hand-picked recipes
+          </li>
+          <li>
+            <span class="icon" aria-hidden="true">🛡️</span>
+            No spam. Unsubscribe anytime.
+          </li>
+          <li>
+            <span class="icon" aria-hidden="true">⚡</span>
+            Quick tips and seasonal menus
+          </li>
+        </ul>
+
+        <form id="subscribe-form" class="form" novalidate>
+          <div class="field">
+            <label for="email" class="label">Email address</label>
+            <input
+              type="email"
+              class="input"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+              aria-describedby="email-error"
+            />
+            <small id="email-error" class="error" role="alert" aria-live="polite"></small>
+          </div>
+
+          <fieldset class="fieldset">
+            <legend class="legend">Your interests (optional)</legend>
+            <div class="chips">
+              <input type="checkbox" id="chip-quick" name="interests" value="Quick Meals" class="chip-input" />
+              <label for="chip-quick" class="chip">Quick Meals</label>
+
+              <input type="checkbox" id="chip-vegan" name="interests" value="Vegan" class="chip-input" />
+              <label for="chip-vegan" class="chip">Vegan</label>
+
+              <input type="checkbox" id="chip-desserts" name="interests" value="Desserts" class="chip-input" />
+              <label for="chip-desserts" class="chip">Desserts</label>
+
+              <input type="checkbox" id="chip-drinks" name="interests" value="Drinks" class="chip-input" />
+              <label for="chip-drinks" class="chip">Drinks</label>
+            </div>
+          </fieldset>
+
+          <div class="consent">
+            <input type="checkbox" id="consent" name="consent" required />
+            <label for="consent">I agree to receive emails and accept the Privacy Policy</label>
+          </div>
+
+          <button type="submit" id="submit-btn" class="btn" disabled>
+            <span class="btn__content">Subscribe</span>
+            <span class="spinner" aria-hidden="true"></span>
+          </button>
+
+          <p class="footnote">
+            We won’t send you spam. Unsubscribe at any time.
+          </p>
+
+          <div id="form-status" class="sr-only" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <noscript>
+    <div class="noscript">JavaScript is disabled. The interactive features (validation, loading state, and toast) are unavailable.</div>
+  </noscript>
+</body>
+</html>
