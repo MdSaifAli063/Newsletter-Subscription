@@ -15,7 +15,7 @@ Modern, responsive subscription landing page with an orange/green theme, served 
 
 <div align="center">
   <img src="https://github.com/MdSaifAli063/Newsletter-Subscription/blob/e76348d3a6a450384e628fc95cc06f8cf1a17537/Screenshot%202025-09-18%20013013.png" alt="Desktop preview" width="820" style="border-radius:12px; margin:8px;" />
-  <img src="server/public/preview-mobile.png" alt="Mobile preview" width="240" style="border-radius:12px; margin:8px;" />
+  <img src="https://github.com/MdSaifAli063/Newsletter-Subscription/blob/f7d895a4d89f809a7eea6c17fb31a7f18bae8178/Screenshot%202025-09-18%20013323.png" alt="Desktop preview" width="240" style="border-radius:12px; margin:8px;" />
 </div>
 
 Tip: take a screenshot of http://localhost:3000 after starting the server.
