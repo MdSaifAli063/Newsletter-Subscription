@@ -19,8 +19,6 @@ Modern, responsive subscription landing page with an orange/green theme, served 
   <img src="https://github.com/MdSaifAli063/Newsletter-Subscription/blob/f7d895a4d89f809a7eea6c17fb31a7f18bae8178/Screenshot%202025-09-18%20013323.png" alt="Desktop preview" width="820" style="border-radius:12px; margin:8px;" />
 </div>
 
-Tip: take a screenshot of http://localhost:3000 after starting the server.
-
 ---
 
 ## ✨ Features
