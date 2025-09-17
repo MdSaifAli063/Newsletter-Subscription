@@ -10,13 +10,8 @@ Modern, responsive subscription landing page with an orange/green theme, served 
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
   
 </div>
----
 
 ## 👀 Preview
-
-Add screenshots to these paths to display the previews:
-- server/public/preview-desktop.png (recommended width ~1280px)
-- server/public/preview-mobile.png (recommended width ~390px)
 
 <div align="center">
   <img src="server/public/preview-desktop.png" alt="Desktop preview" width="820" style="border-radius:12px; margin:8px;" />
