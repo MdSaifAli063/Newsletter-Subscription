@@ -1,26 +1,51 @@
 # 🍊🟢 Fresh & Tasty — Newsletter Subscription
 
-Modern, responsive subscription landing page with an orange/green theme, served by an Express backend. Handles signups with email validation, interest tags, consent, and transactional emails via SMTP (Nodemailer).
+Modern, responsive subscription landing page with an orange/green theme, served by an Express backend. Validates emails, captures interests and consent, and sends transactional emails via SMTP (Nodemailer).
 
-- ✨ Beautiful UI (orange + green) with responsive layout
-- ✅ Real-time email validation + accessible form
-- 🏷️ Interest chips + consent checkbox
-- 🔔 Toast notifications, loading states, and friendly errors
-- 🚀 Express API + Nodemailer email sending
-- 🔐 Environment-based configuration with dotenv
+![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express-4-black?logo=express&logoColor=white)
+![Nodemailer](https://img.shields.io/badge/Nodemailer-SMTP-0b5?logo=minutemailer&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+
+---
+
+## 👀 Preview
+
+Add screenshots to these paths to display the previews:
+- server/public/preview-desktop.png (recommended width ~1280px)
+- server/public/preview-mobile.png (recommended width ~390px)
+
+<div align="center">
+  <img src="server/public/preview-desktop.png" alt="Desktop preview" width="820" style="border-radius:12px; margin:8px;" />
+  <img src="server/public/preview-mobile.png" alt="Mobile preview" width="240" style="border-radius:12px; margin:8px;" />
+</div>
+
+Tip: take a screenshot of http://localhost:3000 after starting the server.
+
+---
+
+## ✨ Features
+
+- ✅ Responsive, accessible form (keyboard and screen reader friendly)
+- 🎨 Orange/green theme with gradients, chips, toast notifications
+- 🔎 Real‑time email validation with inline errors
+- 🏷️ Interest selection (chips) + required consent checkbox
+- 🔔 Loading state, success toast, and graceful error handling
+- 🚀 Express API with rate limiting
+- 📧 Nodemailer SMTP integration (Mailtrap-friendly)
+- 🔐 Environment‑based config via dotenv
 
 ---
 
 ## 🧱 Tech Stack
 
-- Frontend: HTML, CSS, Vanilla JS
-- Backend: Node.js (ESM), Express, CORS, express-rate-limit
-- Email: Nodemailer (SMTP)
-- Config: dotenv
-- Optional Dev Helpers: SKIP_SMTP_VERIFY, DRY_RUN_EMAILS
+- 💻 Frontend: HTML, CSS, Vanilla JS
+- 🧭 Backend: Node.js (ESM), Express, CORS, express‑rate‑limit
+- ✉️ Email: Nodemailer (SMTP)
+- ⚙️ Config: dotenv
 
 ---
-
 ## 📁 Project Structure
 
 
