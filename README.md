@@ -144,7 +144,6 @@ Add these to server/package.json if not present:
 
 { "type": "module", "scripts": { "start": "node src/server.js", "dev": "nodemon --watch src --ext js src/server.js" } }
 
-
 ---
 
 ## 🧪 Dev Tips
@@ -193,7 +192,16 @@ Add these to server/package.json if not present:
 
 Place .gitignore at your Git repo root. Suggested entries:
 
-node_modules/ .env .env.* !.env.example server/.env server/.env. !server/.env.example dist/ build/ .cache/ .vite/ .DS_Store Thumbs.db .vscode/ .idea/
+node_modules/ 
+.env .env.* !.env.example 
+server/.env 
+server/.env. !server/.env.example
+dist/ build/ 
+.cache/ 
+.vite/ 
+.DS_Store Thumbs.db 
+.vscode/ 
+.idea/
 
 
 ---
