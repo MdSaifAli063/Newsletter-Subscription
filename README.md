@@ -64,22 +64,23 @@ cd server npm install
 ```
 
 3) Configure environment
+   
 Create server/.env:
 
 Server
 PORT=3000
 
 SMTP (Mailtrap Sandbox example)
-SMTP_HOST=smtp.mailtrap.io SMTP_PORT=2525 SMTP_SECURE=false SMTP_USER=YOUR_MAILTRAP_USER SMTP_PASS=YOUR_MAILTRAP_PASS
+- SMTP_HOST=smtp.mailtrap.io SMTP_PORT=2525 SMTP_SECURE=false SMTP_USER=YOUR_MAILTRAP_USER SMTP_PASS=YOUR_MAILTRAP_PASS
 
 From identity
-FROM_EMAIL=no-reply@yourdomain.com FROM_NAME=Fresh & Tasty
+- FROM_EMAIL=no-reply@yourdomain.com FROM_NAME=Fresh & Tasty
 
 Optional
-ADMIN_EMAIL=owner@yourdomain.com
-CORS_ORIGIN=http://localhost:5173 # only if frontend runs elsewhere
-SKIP_SMTP_VERIFY=true # skip transporter.verify() on boot
-DRY_RUN_EMAILS=true # simulate success without sending
+- ADMIN_EMAIL=owner@yourdomain.com
+- CORS_ORIGIN=http://localhost:5173 # only if frontend runs elsewhere
+- SKIP_SMTP_VERIFY=true # skip transporter.verify() on boot
+- DRY_RUN_EMAILS=true # simulate success without sending
 
 4) Run
 
