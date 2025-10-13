@@ -59,9 +59,9 @@ project-root/ ├─ server/ │ ├─ .env # your secrets (not committed) │ 
 - SMTP provider (Mailtrap Sandbox recommended for dev)
 
 2) Install
-
+```bash
 cd server npm install
-
+```
 
 3) Configure environment
 Create server/.env:
