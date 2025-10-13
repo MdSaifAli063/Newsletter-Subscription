@@ -68,7 +68,7 @@ cd server npm install
 Create server/.env:
 
 Server
-PORT=3000
+- PORT=3000
 
 SMTP (Mailtrap Sandbox example)
 - SMTP_HOST=smtp.mailtrap.io SMTP_PORT=2525 SMTP_SECURE=false SMTP_USER=YOUR_MAILTRAP_USER SMTP_PASS=YOUR_MAILTRAP_PASS
@@ -83,12 +83,11 @@ Optional
 - DRY_RUN_EMAILS=true # simulate success without sending
 
 4) Run
-
+```bash
 npm start
-
 or
 npm run dev
-
+```
 
 Open http://localhost:3000 to view the page.
 
