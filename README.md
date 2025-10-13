@@ -54,6 +54,7 @@ project-root/ ├─ server/ │ ├─ .env # your secrets (not committed) │ 
 ## ⚡ Quick Start
 
 1) Prerequisites
+   
 - Node.js 18+ (works with Node 24)
 - SMTP provider (Mailtrap Sandbox recommended for dev)
 
