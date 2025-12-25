@@ -116,7 +116,6 @@ curl -X POST http://localhost:3000/api/subscribe
 -H "Content-Type: application/json"
 -d '{"email":"you@example.com","interests":["Vegan","Desserts"],"consent":true}'
 
-
 ---
 
 ## 🎨 Theming
