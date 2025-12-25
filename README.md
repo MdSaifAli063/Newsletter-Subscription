@@ -44,6 +44,7 @@ Modern, responsive subscription landing page with an orange/green theme, served 
 - ⚙️ Config: dotenv
 
 ---
+
 ## 📁 Project Structure
 
 
