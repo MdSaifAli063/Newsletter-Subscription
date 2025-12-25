@@ -3,7 +3,6 @@
   
 Modern, responsive subscription landing page with an orange/green theme, served by an Express backend. Validates emails, captures interests and consent, and sends transactional emails via SMTP (Nodemailer).
 
-  
 ![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?logo=node.js&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-4-black?logo=express&logoColor=white)
 ![Nodemailer](https://img.shields.io/badge/Nodemailer-SMTP-0b5?logo=minutemailer&logoColor=white)
