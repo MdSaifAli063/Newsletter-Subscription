@@ -47,7 +47,6 @@ Modern, responsive subscription landing page with an orange/green theme, served 
 
 ## 📁 Project Structure
 
-
 project-root/ ├─ server/ │ ├─ .env # your secrets (not committed) │ ├─ package.json │ ├─ public/ # served statically at / │ │ ├─ index.html │ │ ├─ style.css │ │ └─ script.js │ └─ src/ │ ├─ server.js # Express app (ESM) │ └─ email.js # Nodemailer setup & email templates (ESM) ├─ .gitignore └─ README.md
 
 
