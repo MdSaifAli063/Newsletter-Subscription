@@ -11,6 +11,7 @@ Modern, responsive subscription landing page with an orange/green theme, served 
   
 </div>
 
+---
 ## 👀 Preview
 
 <div align="center">
