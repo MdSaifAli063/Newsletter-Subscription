@@ -99,6 +99,7 @@ Request body:
 }
 ```
 
+
 Responses:
 
 - `200` `{ "ok": true, "message": "Subscribed" }`
