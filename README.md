@@ -126,3 +126,4 @@ npm run check
 ```
 
 `npm run check` validates JavaScript syntax for the server, email module, and frontend script.
+
