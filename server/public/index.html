@@ -3,76 +3,105 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Subscribe</title>
+  <meta
+    name="description"
+    content="Subscribe to Fresh & Tasty for seasonal recipes, smart kitchen tips, and simple menus delivered weekly."
+  />
+  <title>Fresh & Tasty Newsletter</title>
 
-  <!-- Reset styles -->
-  <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
-
-  <!-- Google Fonts Muli -->
-  <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;700&display=swap" rel="stylesheet" />
-
-  <!-- Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Script -->
   <script defer src="script.js"></script>
 </head>
 <body>
-  <section class="wrapper">
-    <div class="container">
-      <div class="img__container" aria-hidden="true">
+  <main class="page-shell">
+    <section class="subscribe-panel" aria-labelledby="page-title">
+      <div class="visual-panel" aria-label="Fresh seasonal ingredients">
         <img
-          src="https://images.unsplash.com/photo-1546793665-c74683f339c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
-          alt=""
-          class="img"
+          src="https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=1400&q=85"
+          alt="A colorful table filled with fresh vegetables, herbs, bread, and citrus"
+          class="hero-image"
         />
-        <div class="img__overlay"></div>
+        <div class="visual-shade"></div>
+        <div class="brand-mark" aria-label="Fresh & Tasty">
+          <span class="brand-icon" aria-hidden="true">F&T</span>
+          <span>Fresh & Tasty</span>
+        </div>
+        <div class="visual-copy">
+          <p class="kicker">Weekly kitchen notes</p>
+          <h1 id="page-title">Recipes worth opening your inbox for.</h1>
+          <p>
+            Seasonal ideas, fast weeknight meals, and a few sweet finishes from a brighter kitchen.
+          </p>
+        </div>
+        <dl class="stats" aria-label="Newsletter highlights">
+          <div>
+            <dt>12k+</dt>
+            <dd>readers</dd>
+          </div>
+          <div>
+            <dt>8 min</dt>
+            <dd>average cook tip</dd>
+          </div>
+          <div>
+            <dt>Friday</dt>
+            <dd>delivery</dd>
+          </div>
+        </dl>
       </div>
 
-      <div class="content">
-        <div class="badge">Fresh & Tasty</div>
-        <h2 class="subtitle">Subscribe today</h2>
-        <h1 class="title">Never miss a recipe</h1>
+      <div class="form-panel">
+        <div class="form-heading">
+          <p class="eyebrow">Join the list</p>
+          <h2>Get the next menu drop</h2>
+          <p>
+            Pick what you like and we will shape your welcome email around it.
+          </p>
+        </div>
 
-        <ul class="features" aria-label="What you get">
+        <ul class="benefits" aria-label="What you receive">
           <li>
-            <span class="icon" aria-hidden="true">🍽️</span>
-            Weekly hand-picked recipes
+            <span aria-hidden="true">01</span>
+            Hand-picked recipes that fit real weekdays.
           </li>
           <li>
-            <span class="icon" aria-hidden="true">🛡️</span>
-            No spam. Unsubscribe anytime.
+            <span aria-hidden="true">02</span>
+            Seasonal shopping notes and prep shortcuts.
           </li>
           <li>
-            <span class="icon" aria-hidden="true">⚡</span>
-            Quick tips and seasonal menus
+            <span aria-hidden="true">03</span>
+            No spam, no clutter, and an easy unsubscribe.
           </li>
         </ul>
 
         <form id="subscribe-form" class="form" novalidate>
           <div class="field">
             <label for="email" class="label">Email address</label>
-            <input
-              type="email"
-              class="input"
-              id="email"
-              name="email"
-              placeholder="you@example.com"
-              autocomplete="email"
-              required
-              aria-describedby="email-error"
-            />
+            <div class="input-wrap">
+              <input
+                type="email"
+                class="input"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+                aria-describedby="email-error"
+              />
+            </div>
             <small id="email-error" class="error" role="alert" aria-live="polite"></small>
           </div>
 
           <fieldset class="fieldset">
-            <legend class="legend">Your interests (optional)</legend>
+            <legend class="legend">Choose your interests</legend>
             <div class="chips">
               <input type="checkbox" id="chip-quick" name="interests" value="Quick Meals" class="chip-input" />
               <label for="chip-quick" class="chip">Quick Meals</label>
 
-              <input type="checkbox" id="chip-vegan" name="interests" value="Vegan" class="chip-input" />
-              <label for="chip-vegan" class="chip">Vegan</label>
+              <input type="checkbox" id="chip-vegan" name="interests" value="Plant-Based" class="chip-input" />
+              <label for="chip-vegan" class="chip">Plant-Based</label>
 
               <input type="checkbox" id="chip-desserts" name="interests" value="Desserts" class="chip-input" />
               <label for="chip-desserts" class="chip">Desserts</label>
@@ -84,28 +113,25 @@
 
           <div class="consent">
             <input type="checkbox" id="consent" name="consent" required />
-            <label for="consent">I agree to receive emails and accept the Privacy Policy</label>
+            <label for="consent">I agree to receive emails from Fresh & Tasty.</label>
           </div>
 
           <button type="submit" id="submit-btn" class="btn" disabled>
-            <span class="btn__content">Subscribe</span>
+            <span class="btn__content">Subscribe now</span>
             <span class="spinner" aria-hidden="true"></span>
           </button>
 
-          <p class="footnote">
-            We won’t send you spam. Unsubscribe at any time.
-          </p>
-
+          <p class="footnote">Private by default. Unsubscribe with one click whenever you like.</p>
           <div id="form-status" class="sr-only" role="status" aria-live="polite"></div>
         </form>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
   <noscript>
-    <div class="noscript">JavaScript is disabled. The interactive features (validation, loading state, and toast) are unavailable.</div>
+    <div class="noscript">JavaScript is disabled, so live validation and toast messages are unavailable.</div>
   </noscript>
 </body>
 </html>
