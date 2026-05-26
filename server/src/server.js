@@ -51,27 +51,37 @@ function isValidEmail(value) {
   return typeof value === 'string' && re.test(value.trim());
 }
 
+function parseInterests(interests) {
+  if (!Array.isArray(interests)) return [];
+
+  return [...new Set(
+    interests
+      .filter((value) => typeof value === 'string')
+      .map((value) => value.trim())
+      .filter(Boolean)
+  )].slice(0, 10);
+}
+
 // API: Subscribe
 app.post('/api/subscribe', async (req, res) => {
   try {
     const { email, interests = [], consent } = req.body || {};
+    const normalizedEmail = typeof email === 'string' ? email.trim().toLowerCase() : '';
 
-    if (!isValidEmail(email)) {
+    if (!isValidEmail(normalizedEmail)) {
       return res.status(400).json({ ok: false, error: 'INVALID_EMAIL' });
     }
     if (consent !== true) {
       return res.status(400).json({ ok: false, error: 'CONSENT_REQUIRED' });
     }
 
-    const parsedInterests = Array.isArray(interests)
-      ? interests.filter((v) => typeof v === 'string').slice(0, 10)
-      : [];
+    const parsedInterests = parseInterests(interests);
 
-    await sendWelcomeEmail(email, parsedInterests);
+    await sendWelcomeEmail(normalizedEmail, parsedInterests);
 
     if (process.env.ADMIN_EMAIL) {
       // Fire-and-forget admin notification
-      sendAdminNotification(process.env.ADMIN_EMAIL, email, parsedInterests).catch(() => {});
+      sendAdminNotification(process.env.ADMIN_EMAIL, normalizedEmail, parsedInterests).catch(() => {});
     }
 
     return res.status(200).json({ ok: true, message: 'Subscribed' });
