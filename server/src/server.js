@@ -87,6 +87,9 @@ app.post('/api/subscribe', async (req, res) => {
     return res.status(200).json({ ok: true, message: 'Subscribed' });
   } catch (err) {
     console.error('Subscribe error:', err);
+    if (err?.responseCode === 550 && /too many emails per second/i.test(err?.response || err?.message || '')) {
+      return res.status(429).json({ ok: false, error: 'EMAIL_RATE_LIMIT' });
+    }
     return res.status(500).json({ ok: false, error: 'SERVER_ERROR' });
   }
 });
