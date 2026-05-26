@@ -98,8 +98,7 @@ Request body:
   "consent": true
 }
 ```
-
-
+ad
 Responses:
 
 - `200` `{ "ok": true, "message": "Subscribed" }`
