@@ -118,7 +118,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!response.ok) {
         if (response.status === 429) {
-          Toast.show('Too many attempts. Please try again in a minute.', 'error');
+          if (data?.error === 'EMAIL_RATE_LIMIT') {
+            Toast.show('Mailtrap is rate-limiting emails. Please wait a few seconds and try again.', 'error');
+          } else {
+            Toast.show('Too many attempts. Please try again in a minute.', 'error');
+          }
         } else if (data?.error === 'INVALID_EMAIL') {
           setEmailError('Please enter a valid email address.');
           email.focus();
