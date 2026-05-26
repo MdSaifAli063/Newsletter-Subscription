@@ -1,24 +1,24 @@
-# Fresh & Tasty Newsletter Subscription
+# 🍽️ Fresh & Tasty Newsletter Subscription
 
 A polished, responsive newsletter subscription experience with a vanilla HTML/CSS/JS frontend and an Express + Nodemailer backend.
 
-## Features
+## ✨ Features
 
-- Responsive split-layout landing page with a real food image, strong typography, and accessible controls
-- Client-side email validation, consent gating, loading state, and toast feedback
-- Interest chips sent with the subscription request
-- Express API with JSON parsing, static file serving, and rate limiting
-- Nodemailer welcome emails and optional admin notifications
-- `DRY_RUN_EMAILS=true` mode for local UI/API testing without sending email
+- 🖼️ Responsive split-layout landing page with a real food image, strong typography, and accessible controls
+- ✅ Client-side email validation, consent gating, loading state, and toast feedback
+- 🏷️ Interest chips sent with the subscription request
+- 🚦 Express API with JSON parsing, static file serving, and rate limiting
+- 📧 Nodemailer welcome emails and optional admin notifications
+- 🧪 `DRY_RUN_EMAILS=true` mode for local UI/API testing without sending email
 
-## Tech Stack
+## 🧰 Tech Stack
 
-- Frontend: HTML, CSS, vanilla JavaScript
-- Backend: Node.js, Express, express-rate-limit, CORS
-- Email: Nodemailer over SMTP
-- Config: dotenv
+- 🎨 Frontend: HTML, CSS, vanilla JavaScript
+- ⚙️ Backend: Node.js, Express, express-rate-limit, CORS
+- ✉️ Email: Nodemailer over SMTP
+- 🔐 Config: dotenv
 
-## Project Structure
+## 📁 Project Structure
 
 ```text
 .
@@ -35,15 +35,15 @@ A polished, responsive newsletter subscription experience with a vanilla HTML/CS
 └── README.md
 ```
 
-## Quick Start
+## ⚡ Quick Start
 
-1. Install dependencies:
+1. 📦 Install dependencies:
 
 ```bash
 npm install
 ```
 
-2. Create `server/.env`:
+2. 🔧 Create `server/.env`:
 
 ```env
 PORT=3000
@@ -63,7 +63,7 @@ DRY_RUN_EMAILS=false
 # ADMIN_EMAIL=owner@example.com
 ```
 
-3. Run the server:
+3. 🚀 Run the server:
 
 ```bash
 npm start
@@ -77,9 +77,9 @@ npm run dev
 
 Open `http://localhost:3000`.
 
-## API
+## 🔌 API
 
-### `GET /health`
+### 🩺 `GET /health`
 
 Returns:
 
@@ -87,7 +87,7 @@ Returns:
 { "ok": true, "status": "healthy" }
 ```
 
-### `POST /api/subscribe`
+### 📝 `POST /api/subscribe`
 
 Request body:
 
@@ -101,12 +101,12 @@ Request body:
 
 Responses:
 
-- `200` `{ "ok": true, "message": "Subscribed" }`
-- `400` `{ "ok": false, "error": "INVALID_EMAIL" }`
-- `400` `{ "ok": false, "error": "CONSENT_REQUIRED" }`
-- `500` `{ "ok": false, "error": "SERVER_ERROR" }`
+- ✅ `200` `{ "ok": true, "message": "Subscribed" }`
+- ⚠️ `400` `{ "ok": false, "error": "INVALID_EMAIL" }`
+- ⚠️ `400` `{ "ok": false, "error": "CONSENT_REQUIRED" }`
+- ❌ `500` `{ "ok": false, "error": "SERVER_ERROR" }`
 
-## Local Testing Without SMTP
+## 🧪 Local Testing Without SMTP
 
 Set these values in `server/.env`:
 
@@ -117,7 +117,7 @@ DRY_RUN_EMAILS=true
 
 The API will accept valid subscriptions and log that emails were skipped instead of sending them.
 
-## Useful Scripts
+## 🛠️ Useful Scripts
 
 ```bash
 npm start
@@ -126,4 +126,3 @@ npm run check
 ```
 
 `npm run check` validates JavaScript syntax for the server, email module, and frontend script.
-
