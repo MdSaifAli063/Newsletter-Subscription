@@ -1,218 +1,128 @@
-# 🍊🟢 Fresh & Tasty — Newsletter Subscription
-<div align="center">
-  
-Modern, responsive subscription landing page with an orange/green theme, served by an Express backend. Validates emails, captures interests and consent, and sends transactional emails via SMTP (Nodemailer).
+# Fresh & Tasty Newsletter Subscription
 
-![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?logo=node.js&logoColor=white)
-![Express](https://img.shields.io/badge/Express-4-black?logo=express&logoColor=white)
-![Nodemailer](https://img.shields.io/badge/Nodemailer-SMTP-0b5?logo=minutemailer&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-blue.svg)
-![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
-  
-</div>
+A polished, responsive newsletter subscription experience with a vanilla HTML/CSS/JS frontend and an Express + Nodemailer backend.
 
----
+## Features
 
-## 👀 Preview
+- Responsive split-layout landing page with a real food image, strong typography, and accessible controls
+- Client-side email validation, consent gating, loading state, and toast feedback
+- Interest chips sent with the subscription request
+- Express API with JSON parsing, static file serving, and rate limiting
+- Nodemailer welcome emails and optional admin notifications
+- `DRY_RUN_EMAILS=true` mode for local UI/API testing without sending email
 
-<div align="center">
-  <img src="https://github.com/MdSaifAli063/Newsletter-Subscription/blob/e76348d3a6a450384e628fc95cc06f8cf1a17537/Screenshot%202025-09-18%20013013.png" alt="Desktop preview" width="820" style="border-radius:12px; margin:8px;" />
-  <br>
-  <img src="https://github.com/MdSaifAli063/Newsletter-Subscription/blob/f7d895a4d89f809a7eea6c17fb31a7f18bae8178/Screenshot%202025-09-18%20013323.png" alt="Desktop preview" width="820" style="border-radius:12px; margin:8px;" />
-</div>
+## Tech Stack
 
----
+- Frontend: HTML, CSS, vanilla JavaScript
+- Backend: Node.js, Express, express-rate-limit, CORS
+- Email: Nodemailer over SMTP
+- Config: dotenv
 
-## ✨ Features
+## Project Structure
 
-- ✅ Responsive, accessible form (keyboard and screen reader friendly)
-- 🎨 Orange/green theme with gradients, chips, toast notifications
-- 🔎 Real‑time email validation with inline errors
-- 🏷️ Interest selection (chips) + required consent checkbox
-- 🔔 Loading state, success toast, and graceful error handling
-- 🚀 Express API with rate limiting
-- 📧 Nodemailer SMTP integration (Mailtrap-friendly)
-- 🔐 Environment‑based config via dotenv
-
----
-
-## 🧱 Tech Stack
-
-- 💻 Frontend: HTML, CSS, Vanilla JS
-- 🧭 Backend: Node.js (ESM), Express, CORS, express‑rate‑limit
-- ✉️ Email: Nodemailer (SMTP)
-- ⚙️ Config: dotenv
-
----
-
-## 📁 Project Structure
-
-project-root/ ├─ server/ │ ├─ .env # your secrets (not committed) │ ├─ package.json │ ├─ public/ # served statically at / │ │ ├─ index.html │ │ ├─ style.css │ │ └─ script.js │ └─ src/ │ ├─ server.js # Express app (ESM) │ └─ email.js # Nodemailer setup & email templates (ESM) ├─ .gitignore └─ README.md
-
----
-
-## ⚡ Quick Start
-
-1) Prerequisites
-   
-- Node.js 18+ (works with Node 24)
-- SMTP provider (Mailtrap Sandbox recommended for dev)
-
-2) Install
-```bash
-cd server npm install
+```text
+.
+├── server
+│   ├── public
+│   │   ├── index.html
+│   │   ├── script.js
+│   │   └── style.css
+│   └── src
+│       ├── email.js
+│       └── server.js
+├── package.json
+├── package-lock.json
+└── README.md
 ```
 
-3) Configure environment
-   
-Create server/.env:
+## Quick Start
 
-Server
-- PORT=3000
+1. Install dependencies:
 
-SMTP (Mailtrap Sandbox example)
-- SMTP_HOST=smtp.mailtrap.io SMTP_PORT=2525 SMTP_SECURE=false SMTP_USER=YOUR_MAILTRAP_USER SMTP_PASS=YOUR_MAILTRAP_PASS
+```bash
+npm install
+```
 
-From identity
-- FROM_EMAIL=no-reply@yourdomain.com FROM_NAME=Fresh & Tasty
+2. Create `server/.env`:
 
-Optional
-- ADMIN_EMAIL=owner@yourdomain.com
-- CORS_ORIGIN=http://localhost:5173 # only if frontend runs elsewhere
-- SKIP_SMTP_VERIFY=true # skip transporter.verify() on boot
-- DRY_RUN_EMAILS=true # simulate success without sending
+```env
+PORT=3000
+CORS_ORIGIN=
 
-4) Run
+SMTP_HOST=smtp.example.com
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USER=your_user
+SMTP_PASS=your_password
+
+FROM_EMAIL=no-reply@example.com
+FROM_NAME=Fresh & Tasty
+
+SKIP_SMTP_VERIFY=false
+DRY_RUN_EMAILS=false
+# ADMIN_EMAIL=owner@example.com
+```
+
+3. Run the server:
+
 ```bash
 npm start
-or
+```
+
+For development with auto-restart:
+
+```bash
 npm run dev
 ```
 
-Open http://localhost:3000 to view the page.
+Open `http://localhost:3000`.
 
----
+## API
 
-## 🔌 API
+### `GET /health`
 
-Base URL: http://localhost:3000
+Returns:
 
-- GET /health
-  - 200: { "ok": true, "status": "healthy" }
+```json
+{ "ok": true, "status": "healthy" }
+```
 
-- POST /api/subscribe
-  - Request (application/json):
-    - email: string (required)
-    - interests: string[] (optional, up to 10)
-    - consent: boolean (required, must be true)
-  - Responses:
-    - 200: { ok: true, message: "Subscribed" }
-    - 400: { ok: false, error: "INVALID_EMAIL" | "CONSENT_REQUIRED" }
-    - 500: { ok: false, error: "SERVER_ERROR" }
+### `POST /api/subscribe`
 
-Example:
+Request body:
 
-curl -X POST http://localhost:3000/api/subscribe
--H "Content-Type: application/json"
--d '{"email":"you@example.com","interests":["Vegan","Desserts"],"consent":true}'
+```json
+{
+  "email": "you@example.com",
+  "interests": ["Quick Meals", "Desserts"],
+  "consent": true
+}
+```
 
----
+Responses:
 
-## 🎨 Theming
+- `200` `{ "ok": true, "message": "Subscribed" }`
+- `400` `{ "ok": false, "error": "INVALID_EMAIL" }`
+- `400` `{ "ok": false, "error": "CONSENT_REQUIRED" }`
+- `500` `{ "ok": false, "error": "SERVER_ERROR" }`
 
-Main colors are defined in server/public/style.css under :root:
-- --orange, --green
-- --bg, --card, --text, etc.
+## Local Testing Without SMTP
 
-Change these CSS variables to tweak the look and feel. The UI is responsive and includes toast notifications, buttons, chips, and inputs styled for accessibility.
+Set these values in `server/.env`:
 
----
+```env
+SKIP_SMTP_VERIFY=true
+DRY_RUN_EMAILS=true
+```
 
-## 🛡️ Security & Reliability
+The API will accept valid subscriptions and log that emails were skipped instead of sending them.
 
-- Rate limiting: express-rate-limit (30 req/min default)
-- CORS: disabled by default when serving same-origin; enable via CORS_ORIGIN env if needed
-- Validation: light server-side email validation and consent enforcement
-- Secrets: .env not committed; use .env.example in Git
+## Useful Scripts
 
----
+```bash
+npm start
+npm run dev
+npm run check
+```
 
-## 🧰 Scripts
-
-Add these to server/package.json if not present:
-
-{ "type": "module", "scripts": { "start": "node src/server.js", "dev": "nodemon --watch src --ext js src/server.js" } }
-
----
-
-## 🧪 Dev Tips
-
-- Skipping SMTP verify on boot:
-  - server/.env -> SKIP_SMTP_VERIFY=true
-- Dry-run emails (no outbound SMTP, useful for frontend testing):
-  - server/.env -> DRY_RUN_EMAILS=true
-  - The server responds with success without sending.
-
-- Ensure env loads before email setup (ESM):
-  - server/src/server.js loads dotenv first, then dynamically imports ./email.js:
-    - const { sendWelcomeEmail, ... } = await import('./email.js');
-
----
-
-## ❗ Troubleshooting
-
-- ECONNREFUSED ::1:587
-  - Cause: SMTP_* not loaded; Nodemailer defaulted to localhost:587.
-  - Fix: set SMTP_HOST/PORT/etc in server/.env, restart. For Mailtrap use port 2525 with SMTP_SECURE=false.
-
-- require is not defined in ES module scope
-  - Cause: mixing CommonJS with ESM.
-  - Fix: use import syntax everywhere and ensure server/package.json has "type": "module".
-
-- verifyTransporter already declared
-  - Cause: re-declaration in server.js while also importing from email.js.
-  - Fix: only import and use the one from email.js.
-
-- .env not loading
-  - Ensure server/.env exists. In server/src/server.js, we load it explicitly from server/.env.
-  - On startup, you should see logs echoing SMTP host/port.
-
----
-
-## 🚀 Deployment
-
-- Set environment variables in your hosting platform (no .env commit).
-- Serve static files from server/public via Express (already configured).
-- Ensure outbound SMTP is allowed by host (some platforms block port 25; use 2525/587/465 as supported by your SMTP provider).
-
----
-
-## 📦 .gitignore
-
-Place .gitignore at your Git repo root. Suggested entries:
-
-node_modules/ 
-.env .env.* !.env.example 
-server/.env 
-server/.env. !server/.env.example
-dist/ build/ 
-.cache/ 
-.vite/ 
-.DS_Store Thumbs.db 
-.vscode/ 
-.idea/
-
-
----
-
-## 🧡 Credits
-
-- UI inspired by modern dark themes with orange/green gradients
-- Email delivery via Nodemailer
-- Icons are emojis for portability
-
----
-
-## 📜 License
-
-MIT — do what you love, responsibly.
+`npm run check` validates JavaScript syntax for the server, email module, and frontend script.
