@@ -125,13 +125,18 @@ export async function sendWelcomeEmail(to, interests = []) {
     return;
   }
 
-  await transporter.sendMail({
+  const info = await transporter.sendMail({
     from: `"${fromName}" <${fromEmail}>`,
     to,
     subject: 'Welcome to Fresh & Tasty',
     html: renderWelcomeHTML(to, interests),
     text: renderWelcomeText(to, interests)
   });
+
+  console.log(`[Email] Welcome email accepted for ${to}. Message ID: ${info.messageId || 'N/A'}`);
+  if ((SMTP_HOST || '').includes('mailtrap')) {
+    console.log('[Email] Mailtrap SMTP is configured. Check your Mailtrap inbox/sandbox, not the recipient inbox.');
+  }
 }
 
 export async function sendAdminNotification(adminEmail, subscriberEmail, interests = []) {
@@ -143,7 +148,7 @@ export async function sendAdminNotification(adminEmail, subscriberEmail, interes
     return;
   }
 
-  await transporter.sendMail({
+  const info = await transporter.sendMail({
     from: `"${fromName}" <${fromEmail}>`,
     to: adminEmail,
     subject: 'New newsletter subscriber',
@@ -151,4 +156,6 @@ export async function sendAdminNotification(adminEmail, subscriberEmail, interes
     html: `<p><strong>New subscriber:</strong> ${escapeHTML(subscriberEmail)}</p>
            <p><strong>Interests:</strong> ${interests.length ? interests.map(escapeHTML).join(', ') : 'N/A'}</p>`
   });
+
+  console.log(`[Email] Admin notification accepted for ${adminEmail}. Message ID: ${info.messageId || 'N/A'}`);
 }
