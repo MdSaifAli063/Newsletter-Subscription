@@ -9,12 +9,14 @@
   "devDependencies": {
     "nodemon": "^3.1.10"
   },
-  "name": "subsription",
+  "name": "newsletter-subscription",
   "version": "1.0.0",
-  "description": "",
+  "description": "A polished newsletter subscription page with an Express and Nodemailer backend.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/src/server.js",
+    "dev": "nodemon --watch server/src --watch server/public --ext js,html,css server/src/server.js",
+    "check": "node --check server/src/server.js && node --check server/src/email.js && node --check server/public/script.js"
   },
   "keywords": [],
   "author": "",
