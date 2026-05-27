@@ -2,6 +2,7 @@
 
 A polished, responsive newsletter subscription experience with a vanilla HTML/CSS/JS frontend and an Express + Nodemailer backend.
 
+
 ## ✨ Features
 
 - 🖼️ Responsive split-layout landing page with a real food image, strong typography, and accessible controls
