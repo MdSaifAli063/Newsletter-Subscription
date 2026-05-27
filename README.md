@@ -12,6 +12,7 @@ A polished, responsive newsletter subscription experience with a vanilla HTML/CS
 - 📧 Nodemailer welcome emails and optional admin notifications
 - 🧪 `DRY_RUN_EMAILS=true` mode for local UI/API testing without sending email
 
+
 ## 🧰 Tech Stack
 
 - 🎨 Frontend: HTML, CSS, vanilla JavaScript
