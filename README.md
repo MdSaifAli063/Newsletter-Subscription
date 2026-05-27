@@ -20,6 +20,7 @@ A polished, responsive newsletter subscription experience with a vanilla HTML/CS
 - ✉️ Email: Nodemailer over SMTP
 - 🔐 Config: dotenv
 
+
 ## 📁 Project Structure
 
 ```text
