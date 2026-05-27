@@ -38,6 +38,7 @@ A polished, responsive newsletter subscription experience with a vanilla HTML/CS
 └── README.md
 ```
 
+
 ## ⚡ Quick Start
 
 1. 📦 Install dependencies:
