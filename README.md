@@ -106,7 +106,6 @@ Responses:
 - ⚠️ `400` `{ "ok": false, "error": "CONSENT_REQUIRED" }`
 - ❌ `500` `{ "ok": false, "error": "SERVER_ERROR" }`
 
-
 ## 🧪 Local Testing Without SMTP
 
 Set these values in `server/.env`:
