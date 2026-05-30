@@ -117,7 +117,6 @@ DRY_RUN_EMAILS=true
 
 The API will accept valid subscriptions and log that emails were skipped instead of sending them.
 
-
 ## 🛠️ Useful Scripts
 
 ```bash
