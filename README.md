@@ -4,6 +4,7 @@ A polished, responsive newsletter subscription experience with a vanilla HTML/CS
 
 ## ✨ Features
 
+
 - 🖼️ Responsive split-layout landing page with a real food image, strong typography, and accessible controls
 - ✅ Client-side email validation, consent gating, loading state, and toast feedback
 - 🏷️ Interest chips sent with the subscription request
