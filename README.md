@@ -112,6 +112,7 @@ Responses:
 
 ## 🧪 Local Testing Without SMTP
 
+
 Set these values in `server/.env`:
 
 ```env
