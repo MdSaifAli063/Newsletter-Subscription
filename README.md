@@ -83,6 +83,7 @@ Open `http://localhost:3000`.
 
 ## 🔌 API
 
+
 ### 🩺 `GET /health`
 
 Returns:
