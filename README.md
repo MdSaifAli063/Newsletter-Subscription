@@ -14,6 +14,7 @@ A polished, responsive newsletter subscription experience with a vanilla HTML/CS
 
 ## 🧰 Tech Stack
 
+
 - 🎨 Frontend: HTML, CSS, vanilla JavaScript
 - ⚙️ Backend: Node.js, Express, express-rate-limit, CORS
 - ✉️ Email: Nodemailer over SMTP
