@@ -1,5 +1,6 @@
 # 🍽️ Fresh & Tasty Newsletter Subscription
 
+
 A polished, responsive newsletter subscription experience with a vanilla HTML/CSS/JS frontend and an Express + Nodemailer backend.
 
 ## ✨ Features
