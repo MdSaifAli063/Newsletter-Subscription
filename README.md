@@ -22,6 +22,7 @@ A polished, responsive newsletter subscription experience with a vanilla HTML/CS
 
 ## 📁 Project Structure
 
+
 ```text
 .
 ├── server
