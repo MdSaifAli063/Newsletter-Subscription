@@ -40,6 +40,7 @@ A polished, responsive newsletter subscription experience with a vanilla HTML/CS
 
 ## ⚡ Quick Start
 
+
 1. 📦 Install dependencies:
 
 ```bash
